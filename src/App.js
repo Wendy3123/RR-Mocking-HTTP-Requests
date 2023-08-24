@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <h1>Github Profile Info:</h1> */}
+      <h1>Github Profile Info:</h1>
       <h2>Github Username: {gitHubName}</h2>
       <a href={gitHubURL}>
         <button>Link to GitHub profile</button>

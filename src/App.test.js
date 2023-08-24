@@ -13,7 +13,9 @@ describe("receives value from github REST API using jest fetch mock", () => {
   test("mock the GET request using the Jest Fetch Mock npm package", async () => {
     fetch.mockResponseOnce(JSON.stringify({ name: "coder" }));
     render(<App />);
-    const githubName = await waitFor(() => screen.getByRole("heading"));
+    const githubName = await waitFor(
+      () => screen.getByRole("heading", { level: 2 }) //level 2 bc we have to get the second heading 2 in app.js not the first one
+    );
     expect(githubName).toHaveTextContent("coder");
   });
 
